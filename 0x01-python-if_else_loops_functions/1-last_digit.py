@@ -12,7 +12,7 @@ def last_digit(signed_number):
     digit = abs(number) % 10
     if signed_number < 0:
         return -digit
-    if signed_number > 0:
+    if signed_number > 0 or signed_number == 0:
         return digit
 
 
@@ -23,6 +23,3 @@ elif last == 0:
     print(f"Last digit of {number} is {last} and is 0")
 elif last < 6 and not 0:
     print(f"Last digit of {number} is {last} and is less than 6 and not 0")
-if number == 0:
-     print(f"Last digit of {number} is {last} and is 0 ")
-    
