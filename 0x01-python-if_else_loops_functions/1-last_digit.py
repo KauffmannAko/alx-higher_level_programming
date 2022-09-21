@@ -6,16 +6,20 @@ number = random.randint(-10000, 10000)
 last_digit: Returns the last digit of signed number
 
 """
+
+
 def last_digit(signed_number):
     digit = abs(number) % 10
     if signed_number < 0:
         return -digit
     if signed_number > 0:
         return digit
+
+
 last = last_digit(number)
+elif last > 5:
+    print(f"Last digit of {number} is {last} and is greater than 5")
 if last == 0:
     print(f"Last digit of {number} is {last} and is 0")
 elif last < 6 and last != 0:
     print(f"Last digit of {number} is {last} and is less than 6 and not 0")
-elif last > 5:
-    print(f"Last digit of {number} is {last} and is greater than 5")
