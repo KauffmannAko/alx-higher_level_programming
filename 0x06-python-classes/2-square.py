@@ -17,18 +17,13 @@ class Square:
 
         Args:
             size: (:obj:'int'): A private instance size
+        Raises:
+              TypeError: Exception if type is not an integer
+              ValueError:Exception if is negative
         """
-        self.__size = size
-    @size.setter
-    def size(self,value):
-        if isinstance(value, int):
-            self.__size = value
-        elif value < 0:
+        if type(size) is not int:
+            raise TypeError('size must be an integer')
+        elif size < 0:
             raise ValueError('size must be >= 0')
         else:
-            raise TypeError('size must be an integer')
-                                 
-
-
-        
-
+            self.__size = size
