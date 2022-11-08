@@ -5,27 +5,19 @@ Created on Mon. Oct. 31,2022
 @author: Nana Kauffmann
 """
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+Rectangle = __import__('9-rectangle').Rectangle
 
 
-class Square(BaseGeometry):
+class Square(Rectangle):
     """
-    A public instance method that raises an exception
+    A Square class shape, inheirts from Rectangle and BaseGeometry
     """
     def __init__(self, size):
+        """"
+        Init function for Square
+        Attributes:
+            size (int): The size of the square
         """
-         A Rectangle class shape, inherits from BaseGeometry
-        """
+        super().__init__(size, size)
         self.integer_validator("size", size)
         self.__size = size
-
-    def __str__(self):
-        """
-        str funtion for rectangle
-        Returns:
-            Return width/height
-        """
-        return '[Rectangle] ' + str(self.__size) + '/' + str(self.__size)
-
-    def area(self):
-        return self.__size * self.__size
