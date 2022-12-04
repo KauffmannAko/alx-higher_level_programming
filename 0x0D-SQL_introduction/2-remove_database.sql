@@ -1,3 +1,3 @@
--- Delete databases using DROP
--- Delete database hbtn_0c_0 in  MySQL server
-DROP DATABASE IF EXITS hbtn_0c_0;
+-- Deletes a database using DROP
+-- Delete a database if its present
+DROP DATABASE IF EXISTS hbtn_0c_0;
