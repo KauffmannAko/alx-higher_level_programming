@@ -1,0 +1,65 @@
+=======================================================
+'Unit test for 0-add_integer module'
+=======================================================
+'Function to test: add_integer()'
+=======================================================
+
+>>> add_integer = __import__('0-add_integer').add_integer
+
+'positive integer values'
+>>> add_integer(1, 2)
+3
+
+'positive integer values'
+>>> add_integer(5, -2)
+3
+
+'Negative integer values'
+>>> add_integer(-1, -2)
+-3
+
+'Negative integer values'
+>>> add_integer(-5, 2)
+-3
+
+'positive floating point values'
+>>> add_integer(100.5, -2)
+98
+
+'positive floating point values'
+>>> add_integer(100.5, -2.8)
+98
+
+'Negative floating point values'
+>>> add_integer(-100.5, -2.8)
+-102
+
+'Negative floating point values'
+>>> add_integer(-100.5, 2.8)
+-98
+
+'only one argument'
+>>> add_integer(7)
+105
+
+'b argument is empty '
+>>> add_integer(7)
+105
+
+'a is an integer and b is a string'
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+'a is a string and b is an integer'
+>>> add_integer(4, "School")
+Traceback (most recent call last):
+...
+TypeError: b must be an integer
+
+'Missing argument'
+>>> add_integer()
+Traceback (most recent call last):
+...
+TypeError: add_integer() missing 1 required positional argument: 'a'
