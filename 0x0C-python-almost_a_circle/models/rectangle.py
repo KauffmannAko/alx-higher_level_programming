@@ -66,11 +66,14 @@ class Rectangle(Base):
     def display(self):
         """print # char of a rectangle
         """
+        for i in range(self.__y):
+            print()
         for i in range(self.__height):
-            print("")
+            for j in range(self.__x):
+                print("", end="")
             for j in range(self.__width):
                 print("#", end="")
-        print(" ")
+            print(" ")
 
     @property
     def width(self):
