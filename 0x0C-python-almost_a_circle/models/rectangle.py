@@ -55,6 +55,34 @@ class Rectangle(Base):
         else:
             self.__y = y
 
+    def update(self, *args):
+        """Update arguments
+
+        Returns:
+            _type_: _description_
+        """
+        new_arg = []
+        for i in range(len(args)):
+            if args[i] is None:
+                new_arg.append(args[i])
+            else:
+                if i == 0:
+                    self.id = args[i]
+                    new_arg.append(self.id)
+                elif i == 1:
+                    self.__width = args[i]
+                    new_arg.append(self.__width)
+                elif i == 2:
+                    self.__height = args[i]
+                    new_arg.append(self.__height)
+                elif i == 3:
+                    self.__x = args[i]
+                    new_arg.append(self.__x)
+                elif i == 4:
+                    self.__y = args[i]
+                    new_arg.append(self.__y)
+        return tuple(new_arg)
+
     def area(self):
         """Area
 
@@ -74,14 +102,18 @@ class Rectangle(Base):
             for j in range(self.__width):
                 print("#", end="")
             print(" ")
+
     def __str__(self):
         """str method for class Rectangle
+        using you don't use str magic method,you
+        will have this <__main__.Demo object at 0x7f705a1addf0>
+        as your output - we override the __str__ method
 
         Returns:
-            str: he string: [class_name] (id) x/y - width/height
+            strls: he string: [class_name] (id) x/y - width/height
         """
-        string = "[{}] ({}) {}/{}".format(self.__class__.__name__, 
-                                          self.id,self.__x,self.__y, 
+        string = "[{}] ({}) {}/{}".format(self.__class__.__name__, self.id,
+                                          self.__x, self.__y,
                                           self.__width, self.__height)
         return string
 
